@@ -1,4 +1,3 @@
-# 2AP_DZMITRY_MELEKH_PROJOPP_AP_e1
 
 # Sklep internetowy z odzieżą
 
