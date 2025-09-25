@@ -41,9 +41,9 @@ body{
 
 .main-text {
     text-align: left;
-    color: #333;
+    color: #1c1c1c;
     font-weight: bolder;
-    font-size: xx-large;
+    font-size: 2.8rem;
 }
 
 .options {
