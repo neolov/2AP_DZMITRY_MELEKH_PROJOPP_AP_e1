@@ -1,0 +1,114 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+.main-container{
+    width: 100%;
+    margin: auto;
+    overflow: hidden;
+
+    height: 100%;
+}
+.first-section {
+    position: relative; 
+
+    width: 70%;
+    padding: 20px;
+    background-color: #fff;
+    height: 827px;
+    overflow: hidden;
+    float: left;
+}
+.second-section {
+    display: flex;
+    position: relative;
+
+    width: 25%;
+    float: right;
+    padding: 20px;
+    background-color: #fff;
+    height: 827px;
+    align-items: center;
+    justify-content: left;
+}
+.nav-bar {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.main-text {
+    text-align: left;
+    color: #333;
+    font-weight: bolder;
+    font-size: xx-large;
+}
+
+.options {
+    font-family: 'Trebuchet MS', Arial, sans-serif;
+    text-decoration: none;
+    color: #333;
+    display: inline-block; 
+    cursor: pointer;
+}
+
+.options:hover {
+    font-size: large;
+    font-weight: bold;
+}
+
+.sub-menu {
+    list-style: none;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 50spx;
+    display: none;
+}
+
+.sub-options {
+    font-family: 'Trebuchet MS', Arial, sans-serif;
+    text-decoration: none;
+    color: #000;
+    display: block;
+    width: 200px;
+}
+
+.sub-options:hover {
+    font-weight: bold;
+}
+
+
+
+.photo1, .photo2, .photo3 {
+    position: absolute;
+    top: 25px;
+    left: 50px;
+    width: 1250px;
+    height: 825px;
+    opacity: 0;
+    transition: opacity 2s ease-in-out; 
+}
+
+
+.photo1 {
+    animation: fade 12s infinite;
+}
+.photo2 {
+    animation: fade 12s infinite 4s;
+}
+.photo3 {
+    animation: fade 12s infinite 8s;
+}
+
+@keyframes fade {
+    0%   { opacity: 0; }
+    10%  { opacity: 1; }
+    30%  { opacity: 1; }
+    40%  { opacity: 0; }
+    100% { opacity: 0; }
+}
+
+
+
