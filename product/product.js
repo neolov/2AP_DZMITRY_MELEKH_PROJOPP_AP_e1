@@ -35,7 +35,7 @@ const products = [
         id: 5,
         name: "You are not alone longsleeve",
         price: "$1250.00",
-        images: ["../img/ur not alone/ur not alone long.png", "../img/ur not alone/ur not alone long back.png", "../img/ur not alone/ur not alone photo.png", "../img/ur not alone/ur not alone photo 2.png", "../img/ur not alone/ur not alone long 50.png"],
+        images: ["../img/ur not alone/ur not alone long.png", "../img/ur not alone/ur not alone long back.png",  "../img/ur not alone/ur not alone photo 2.png", "../img/ur not alone/ur not alone long 50.png"],
         col_name: "It's time to find a way.",
         desc: "• This item is made from premium materials, hand-dyed and torn; each piece is unique, and each piece is subject to quality control.• This item has a distressed effect from the factory.• The front print is made with the highest quality ink that withstands numerous washes.• A washing guide is included inside.• Fabric: cotton + lycra (increased density)"
 

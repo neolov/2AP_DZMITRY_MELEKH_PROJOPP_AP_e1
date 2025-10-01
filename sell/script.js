@@ -6,7 +6,8 @@ const products = [
         price: "$900.00",
         image: "../img/gen of vinity/t-shirt.jpg",
         image2: "../img/gen of vinity/photo1.jpg",
-        isNew: true
+        isNew: true,
+        Collection: "Generation of Vanity"
     },
     {
         id: 2,
@@ -15,7 +16,8 @@ const products = [
         price: "$350.00",
         image: "../img/koe no katachi/T-shirt koe no katachi.jpg",
         image2: "../img/koe no katachi/T-shirt koe na katachi first.jpg",
-        isNew: false
+        isNew: false,
+        Collection: "Koe no katachi"
     },
     {
         id: 3,
@@ -24,7 +26,8 @@ const products = [
         price: "$550.00",
         image: "../img/koe no katachi/koe no katachi long.png",
         image2: "../img/koe no katachi/koe no katachi long photo.jpg",
-        isNew: false
+        isNew: false,
+        Collection: "Koe no katachi"
     },
         {
         id: 4,
@@ -33,7 +36,8 @@ const products = [
         price: "$1101.01",
         image: "../img/koe no katachi/koe no katachi zip.png",
         image2: "../img/koe no katachi/koe no katachi zip photo.jpg",
-        isNew: false
+        isNew: false,
+        Collection: "Koe no katachi"
     },
         {
         id: 5,
@@ -42,7 +46,8 @@ const products = [
         price: "$1,250.00",
         image: "../img/ur not alone/ur not alone long.png",
         image2: "../img/ur not alone/ur not alone photo.png",
-        isNew: false
+        isNew: false,
+        Collection: "Ur not alone"
     },
         {
         id: 6,
@@ -51,7 +56,8 @@ const products = [
         price: "$666.00",
         image: "../img/i remember/long face.jpg",
         image2: "../img/i remember/long photo.jpg",
-        isNew: true
+        isNew: true,
+        Collection: "Generation of Vanity"
     }
 ];
 

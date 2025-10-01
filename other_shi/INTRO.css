@@ -81,7 +81,7 @@ body{
 
 
 
-.photo1, .photo2, .photo3 {
+.photo1, .photo2, .photo3, .photo4 {
     position: absolute;
     margin: 25px;
     width: 95%;
@@ -92,13 +92,16 @@ body{
 
 
 .photo1 {
-    animation: fade 12s infinite;
+    animation: fade 18s infinite;
 }
 .photo2 {
-    animation: fade 12s infinite 4s;
+    animation: fade 18s infinite 6s;
 }
 .photo3 {
-    animation: fade 12s infinite 8s;
+    animation: fade 18s infinite 10s;
+}
+.photo4 {
+    animation: fade 18s infinite 14s;
 }
 
 @keyframes fade {

@@ -28,6 +28,7 @@ body {
     position: fixed;
     top: 0;
     z-index: 10;
+    background-color: rgb(255, 255, 255, 80%);
 }
 
 .banner-text {
@@ -36,6 +37,7 @@ body {
     padding-right: 150px;
     text-decoration: none;
     color: #1c1c1c;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     transition: all 0.3s ease;
 }
 
@@ -93,13 +95,13 @@ body {
 .product-card h3 {
     text-align: center;
     margin: 10px 0 5px;
-    font-size: 1rem;
+    font-size: 1.2rem;
 }
 
 .product-card p {
     text-align: center;
     margin: 0;
-    font-size: 0.75rem;
+    font-size: 0.95rem;
     color: #555;
 }
 
