@@ -1,19 +1,19 @@
-body{
+body {
     margin: 0;
     padding: 0;
-    font-family:'Times New Roman', Times, serif;
+    font-family: 'Times New Roman', Times, serif;
     background-color: #f4f4f4;
 }
-.main-container{
+
+.main-container {
     width: 100%;
     margin: auto;
     overflow: hidden;
-
     height: 100%;
 }
-.first-section {
-    position: relative; 
 
+.first-section {
+    position: relative;
     width: 70%;
     padding: 20px;
     background-color: #fff;
@@ -21,10 +21,10 @@ body{
     overflow: hidden;
     float: left;
 }
+
 .second-section {
     display: flex;
     position: relative;
-
     width: 25%;
     float: right;
     padding: 20px;
@@ -33,6 +33,7 @@ body{
     align-items: center;
     justify-content: left;
 }
+
 .nav-bar {
     list-style: none;
     padding: 0;
@@ -46,28 +47,28 @@ body{
     font-size: 2.8rem;
 }
 
-.options {
+.menu-category {
     font-family: 'Trebuchet MS', Arial, sans-serif;
     text-decoration: none;
     color: #333;
-    display: inline-block; 
+    display: inline-block;
     cursor: pointer;
+    margin-top: 5px;
 }
 
-.options:hover {
+.menu-category:hover {
     font-size: large;
     font-weight: bold;
 }
 
-.sub-menu {
+.submenu {
     list-style: none;
     padding-top: 20px;
     padding-bottom: 20px;
-    padding-left: 50spx;
     display: none;
 }
 
-.sub-options {
+.submenu a {
     font-family: 'Trebuchet MS', Arial, sans-serif;
     text-decoration: none;
     color: #000;
@@ -75,39 +76,28 @@ body{
     width: 200px;
 }
 
-.sub-options:hover {
+.submenu a:hover {
     font-weight: bold;
 }
 
-
-
+/* Фото-анимация */
 .photo1, .photo2, .photo3 {
     position: absolute;
     margin: 25px;
     width: 95%;
     height: 95%;
     opacity: 0;
-    transition: opacity 2s ease-in-out; 
+    transition: opacity 2s ease-in-out;
 }
 
-
-.photo1 {
-    animation: fade 12s infinite;
-}
-.photo2 {
-    animation: fade 12s infinite 4s;
-}
-.photo3 {
-    animation: fade 12s infinite 8s;
-}
+.photo1 { animation: fade 12s infinite; }
+.photo2 { animation: fade 12s infinite 4s; }
+.photo3 { animation: fade 12s infinite 8s; }
 
 @keyframes fade {
-    0%   { opacity: 0; }
-    10%  { opacity: 1; }
-    30%  { opacity: 1; }
-    40%  { opacity: 0; }
+    0% { opacity: 0; }
+    10% { opacity: 1; }
+    30% { opacity: 1; }
+    40% { opacity: 0; }
     100% { opacity: 0; }
 }
-
-
-

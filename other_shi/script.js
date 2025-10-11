@@ -16,4 +16,5 @@ document.querySelectorAll(".options").forEach(option => {
         }
     });
 });
-s
+
+
