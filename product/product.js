@@ -102,7 +102,6 @@ if (!product) {
         }
     }
 }
-<<<<<<< HEAD
 
 // CART LOGIC
 const cartCount = document.querySelector(".cart-count");
@@ -133,5 +132,3 @@ document.querySelector(".buy-btn")?.addEventListener("click", () => {
     alert("Added to cart!");
 });
 
-=======
->>>>>>> d4f9f8d53c352c81ad103a9856e4a22cf30f1f7d
