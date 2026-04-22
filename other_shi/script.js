@@ -37,21 +37,33 @@ document.querySelectorAll(".menu-category").forEach(categoryItem => {
     });
 });
 
-    document.getElementById("send-feedback-btn").addEventListener("click", function() {
-        document.getElementById("feedback-form").style.display = "block";
+
+document.getElementById("send-feedback-btn").addEventListener("click", function () {
+    const form = document.getElementById("feedback-form");
+    form.style.display = "block";
+});
+
+
+
+document.getElementById("feedback-form").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const name = document.getElementById("user_name").value;
+    const email = document.getElementById("user_email").value;
+    const message = document.getElementById("message").value;
+
+    emailjs.send("service_9g5or3p", "template_wyo5vag", {
+        from_name: name,
+        from_email: email,
+        message: message
+    })
+    .then(() => {
+        alert("Message sent!");
+        document.getElementById("feedback-form").reset();
+        document.getElementById("feedback-form").style.display = "none";
+    })
+    .catch((err) => {
+        console.log(err);
+        alert("Error sending message");
     });
-
-    
-    document.getElementById("feedback-form").addEventListener("submit", function(e) {
-        e.preventDefault();
-
-        const name = encodeURIComponent(document.getElementById("user_name").value);
-        const email = encodeURIComponent(document.getElementById("user_email").value);
-        const message = encodeURIComponent(document.getElementById("message").value);
-
-        const subject = encodeURIComponent("Feedback from " + name);
-        const body = `Name: ${name}%0AEmail: ${email}%0AMessage: ${message}`;
-
-        window.location.href = `mailto:neolov97@gmail.com?subject=${subject}&body=${body}`;
-    });
-
+});
