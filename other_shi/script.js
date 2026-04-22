@@ -38,32 +38,43 @@ document.querySelectorAll(".menu-category").forEach(categoryItem => {
 });
 
 
-document.getElementById("send-feedback-btn").addEventListener("click", function () {
+document.addEventListener("DOMContentLoaded", () => {
+
+    const btn = document.getElementById("send-feedback-btn");
     const form = document.getElementById("feedback-form");
-    form.style.display = "block";
-});
 
+    if (btn && form) {
+        btn.addEventListener("click", () => {
 
+            if (form.style.display === "block") {
+                form.style.display = "none";
+            } else {
+                form.style.display = "block";
+            }
+        });
+    }
 
-document.getElementById("feedback-form").addEventListener("submit", function (e) {
-    e.preventDefault();
+    form.addEventListener("submit", function (e) {
+        e.preventDefault();
 
-    const name = document.getElementById("user_name").value;
-    const email = document.getElementById("user_email").value;
-    const message = document.getElementById("message").value;
+        const name = document.getElementById("user_name").value;
+        const email = document.getElementById("user_email").value;
+        const message = document.getElementById("message").value;
 
-    emailjs.send("service_9g5or3p", "template_wyo5vag", {
-        from_name: name,
-        from_email: email,
-        message: message
-    })
-    .then(() => {
-        alert("Message sent!");
-        document.getElementById("feedback-form").reset();
-        document.getElementById("feedback-form").style.display = "none";
-    })
-    .catch((err) => {
-        console.log(err);
-        alert("Error sending message");
+        emailjs.send("service_9g5or3p", "template_wyo5vag", {
+            from_name: name,
+            from_email: email,
+            message: message
+        })
+        .then(() => {
+            alert("Message sent!");
+            form.reset();
+            form.style.display = "none";
+        })
+        .catch((err) => {
+            console.log(err);
+            alert("Error sending message");
+        });
     });
+
 });
