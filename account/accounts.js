@@ -1,133 +1,155 @@
+document
+.querySelectorAll(".menu-category")
+.forEach(categoryItem => {
 
-
-document.querySelectorAll(".menu-category").forEach(categoryItem => {
     categoryItem.addEventListener("click", () => {
 
-        const currentSubmenu = categoryItem.nextElementSibling;
+        const currentSubmenu =
+            categoryItem.nextElementSibling;
 
-        
-        document.querySelectorAll(".submenu").forEach(otherMenu => {
+        document
+        .querySelectorAll(".submenu")
+        .forEach(otherMenu => {
+
             if (otherMenu !== currentSubmenu) {
+
                 otherMenu.style.display = "none";
             }
         });
 
-       
         if (currentSubmenu) {
-            const isOpen = currentSubmenu.style.display === "block";
-            currentSubmenu.style.display = isOpen ? "none" : "block";
+
+            const isOpen =
+                currentSubmenu.style.display === "block";
+
+            currentSubmenu.style.display =
+                isOpen ? "none" : "block";
         }
     });
 });
 
-const loginTab = document.getElementById("loginTab");
-const registerTab = document.getElementById("registerTab");
+const loginTab =
+    document.getElementById("loginTab");
 
-const loginForm = document.getElementById("loginForm");
-const registerForm = document.getElementById("registerForm");
+const registerTab =
+    document.getElementById("registerTab");
 
-const accountPage = document.getElementById("accountPage");
+const loginForm =
+    document.getElementById("loginForm");
+
+const registerForm =
+    document.getElementById("registerForm");
 
 loginTab.addEventListener("click", () => {
+
     loginForm.style.display = "flex";
+
     registerForm.style.display = "none";
 
     loginTab.classList.add("active-tab");
+
     registerTab.classList.remove("active-tab");
 });
 
 registerTab.addEventListener("click", () => {
+
     loginForm.style.display = "none";
+
     registerForm.style.display = "flex";
 
     registerTab.classList.add("active-tab");
+
     loginTab.classList.remove("active-tab");
 });
 
-document.getElementById("registerBtn").addEventListener("click", () => {
+document
+.getElementById("registerBtn")
+.addEventListener("click", async () => {
 
-    const name = document.getElementById("registerName").value;
-    const email = document.getElementById("registerEmail").value;
-    const password = document.getElementById("registerPassword").value;
+    const name =
+        document.getElementById("registerName").value;
 
-    if (!email || !password || !name) {
-        alert("Fill all fields");
+    const email =
+        document.getElementById("registerEmail").value;
+
+    const password =
+        document.getElementById("registerPassword").value;
+
+    if (password.length < 8) {
+
+        alert(
+            "Password must be at least 8 characters"
+        );
+
         return;
     }
 
-    const users = JSON.parse(localStorage.getItem("users")) || [];
+    const response = await fetch("/register", {
 
-    const userExists = users.find(user => user.email === email);
+        method: "POST",
 
-    if (userExists) {
-        alert("User already exists");
-        return;
-    }
+        headers: {
+            "Content-Type": "application/json"
+        },
 
-    users.push({
-        name,
-        email,
-        password
+        body: JSON.stringify({
+            name,
+            email,
+            password
+        })
     });
 
-    localStorage.setItem("users", JSON.stringify(users));
+    const data = await response.json();
 
-    alert("Registered successfully");
+    if (!response.ok) {
 
-    loginForm.style.display = "flex";
-    registerForm.style.display = "none";
-});
+        alert(data.message);
 
-document.getElementById("loginBtn").addEventListener("click", () => {
-
-    const email = document.getElementById("loginEmail").value;
-    const password = document.getElementById("loginPassword").value;
-
-    const users = JSON.parse(localStorage.getItem("users")) || [];
-
-    const user = users.find(user =>
-        user.email === email &&
-        user.password === password
-    );
-
-    if (!user) {
-        alert("Invalid credentials");
         return;
     }
 
-    localStorage.setItem("currentUser", JSON.stringify(user));
-
-    showAccount(user);
+    window.location.href =
+        "/account/account.html";
 });
 
-function showAccount(user) {
+document
+.getElementById("loginBtn")
+.addEventListener("click", async () => {
 
-    loginForm.style.display = "none";
-    registerForm.style.display = "none";
+    const email =
+        document.getElementById("loginEmail").value;
 
-    document.querySelector(".account-tabs").style.display = "none";
+    const password =
+        document.getElementById("loginPassword").value;
 
-    accountPage.style.display = "block";
+    const response = await fetch("/login", {
 
-    document.getElementById("accountEmail").textContent = user.email;
-    document.getElementById("accountName").textContent = user.name;
-}
+        method: "POST",
 
-document.getElementById("logoutBtn").addEventListener("click", () => {
+        headers: {
+            "Content-Type": "application/json"
+        },
 
-    localStorage.removeItem("currentUser");
+        body: JSON.stringify({
+            email,
+            password
+        })
+    });
 
-    location.reload();
-});
+    const user = await response.json();
 
-window.addEventListener("DOMContentLoaded", () => {
+    if (!response.ok) {
 
-    const currentUser = JSON.parse(
-        localStorage.getItem("currentUser")
+        alert(user.message);
+
+        return;
+    }
+
+    localStorage.setItem(
+        "currentUser",
+        JSON.stringify(user)
     );
 
-    if (currentUser) {
-        showAccount(currentUser);
-    }
+    window.location.href =
+        "/account/account.html";
 });
-

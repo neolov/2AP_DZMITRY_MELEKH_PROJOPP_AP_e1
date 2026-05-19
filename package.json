@@ -1,0 +1,25 @@
+{
+  "name": "2ap_dzmitry_melekh_projopp_ap_e1-main",
+  "version": "1.0.0",
+  "description": "Aplikacja służy do sprzedaży odzieży online. Umożliwia prezentację kolekcji ubrań, zapoznanie się z ofertą oraz dokonanie zakupu w prosty i intuicyjny sposób.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/neolov/2AP_DZMITRY_MELEKH_PROJOPP_AP_e1.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/neolov/2AP_DZMITRY_MELEKH_PROJOPP_AP_e1/issues"
+  },
+  "homepage": "https://github.com/neolov/2AP_DZMITRY_MELEKH_PROJOPP_AP_e1#readme",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
