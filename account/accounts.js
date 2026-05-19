@@ -1,6 +1,4 @@
-document
-.querySelectorAll(".menu-category")
-.forEach(categoryItem => {
+document.querySelectorAll(".menu-category").forEach(categoryItem => {
 
     categoryItem.addEventListener("click", () => {
 
