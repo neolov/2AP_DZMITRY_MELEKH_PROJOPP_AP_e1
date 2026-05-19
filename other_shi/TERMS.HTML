@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>n3wo1ow store</title>
+    <link rel="stylesheet" href="terms.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="first-section">
+        <div class="container_terms">
+            <img src="../img/chb/dom2.jpg" alt="n3wo1ow store logo" class="terms_logo">
+            <h1 class="contacts_main-text">TERMS & CONDITIONS</h1>
+
+            <div class="policy_buttons">
+                <button class="policy_btn active" data-target="terms_use">Terms of Use</button>
+                <button class="policy_btn" data-target="terms_sale">Terms of Sale</button>
+            </div>
+
+            <div class="policy_text">
+                <div id="terms_use" class="policy_content">
+                    <p>Welcome to www.n3wo1ow.com ("Website").</p>
+                    <p>This Website is owned and operated by n3wo1ow store, a registered company. By using the Website, you agree to these Terms of Use (ToU). If you disagree, stop using the Website immediately.</p>
+                    <p>We may update these ToU at any time. Continued use constitutes acceptance.</p>
+                    <h3>1. Access & Account</h3>
+                    <p>You must provide accurate info and maintain confidentiality of your account. Services are not for minors.</p>
+                    <h3>2. Privacy & Cookies</h3>
+                    <p>Our Privacy Policy explains how we collect and use data. Cookies enhance user experience.</p>
+                    <h3>3. Acceptable Use</h3>
+                    <p>No hacking, false info, unlawful activity, or harmful content is allowed.</p>
+                    <h3>4. Electronic Services</h3>
+                    <p>We may contact you via email or SMS for service-related issues.</p>
+                    <h3>5. Intellectual Property</h3>
+                    <p>All Website content is owned or licensed by us. No unauthorized copying or distribution.</p>
+                    <h3>6. User Content</h3>
+                    <p>Submitted content is non-confidential and may be used by us. We may remove inappropriate content.</p>
+                    <h3>7. Links</h3>
+                    <p>We are not responsible for third-party sites.</p>
+                    <h3>8. Warranties</h3>
+                    <p>Website is provided "as is". We do not guarantee uninterrupted service or accuracy of content.</p>
+                    <h3>9. Liability</h3>
+                    <p>Our liability is limited. You assume risk when using the Website.</p>
+                    <h3>10. Indemnification</h3>
+                    <p>You agree to indemnify us for violations of ToU or misuse of the Website.</p>
+                    <h3>11. Governing Law</h3>
+                    <p>These ToU are governed by UAE law, Dubai jurisdiction.</p>
+                    <h3>12. Contact</h3>
+                    <p>Email: support@n3wo1ow.com</p>
+                </div>
+
+                <div id="terms_sale" class="policy_content" style="display:none;">
+                    <p>Welcome to www.n3wo1ow.com ("Website").</p>
+                    <p>These Terms of Sale (ToS) govern purchases of products from the Website. By purchasing, you agree to these terms.</p>
+                    <h3>1. General</h3>
+                    <p>ToS govern online purchases only. You must be 21+ and purchases are for personal use.</p>
+                    <h3>2. Product Info & Availability</h3>
+                    <p>We strive for accuracy. Products are subject to availability. Updates may occur without notice.</p>
+                    <h3>3. Color Disclaimer</h3>
+                    <p>Colors may vary due to screens or materials. Minor variations are not defects.</p>
+                    <h3>4. Purchasing Process</h3>
+                    <p>Select items into your Shopping Bag and complete checkout. Changes after order may require return.</p>
+                    <h3>5. Order Confirmation</h3>
+                    <p>Contract is formed upon Confirmation Email. We may refuse orders under certain circumstances.</p>
+                    <h3>6. Pricing & Payment</h3>
+                    <p>Prices include taxes unless stated. Payments only via listed methods.</p>
+                    <h3>7. Shipping & Delivery</h3>
+                    <p>See our Shipping Policy for details.</p>
+                    <h3>8. Returns & Refunds</h3>
+                    <p>See our Return & Refund Policy.</p>
+                    <h3>9. Warranty & Liability</h3>
+                    <p>Products are warranted for 14 days. Liability is limited to purchase amount.</p>
+                    <h3>10. Force Majeure</h3>
+                    <p>We are not liable for delays due to uncontrollable events.</p>
+                    <h3>11. Severability</h3>
+                    <p>If any provision is invalid, the rest remain in effect.</p>
+                    <h3>12. Entire Agreement</h3>
+                    <p>These ToS form the complete agreement for purchases.</p>
+                    <h3>13. Language</h3>
+                    <p>English version prevails in case of translation differences.</p>
+                    <h3>14. Customer Support</h3>
+                    <p>Mon–Fri, 10:00–19:00 GMT+3. Email: support@n3wo1ow.com</p>
+                    <h3>15. Governing Law</h3>
+                    <p>UAE law, Dubai courts.</p>
+                    <h3>16. Contact</h3>
+                    <p>Email: support@n3wo1ow.com</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const buttons = document.querySelectorAll('.policy_btn');
+    const contents = document.querySelectorAll('.policy_content');
+
+    buttons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            // Снимаем active со всех кнопок
+            buttons.forEach(b => b.classList.remove('active'));
+            // Добавляем active текущей кнопке
+            btn.classList.add('active');
+
+            // Скрываем все тексты
+            contents.forEach(c => c.style.display = 'none');
+            // Показываем выбранный
+            document.getElementById(btn.dataset.target).style.display = 'block';
+        });
+    });
+});
+</script>
+
+        <div class="second-section">
+            <ul class="nav-bar">
+                <h1 class="main-text">n3wo1ow st0r3</h1>
+
+                <li>
+                    <span class="menu-category">SHOP</span>
+                    <ul class="submenu">
+                        <li><a href="../sell/index.html?filter=all">All Products</a></li>
+                        <li><a href="../sell/index.html?filter=new">New Arrivals</a></li>
+                    </ul>
+                </li>
+
+                <li>
+                    <span class="menu-category">PROJECTS</span>
+                    <ul class="submenu">
+                        <li><a href="../sell/index.html?filter=koe-no-katachi">koe no katachi</a></li>
+                        <li><a href="../sell/index.html?filter=generation-of-vanity">generation of vanity</a></li>
+                    </ul>
+                </li>
+
+                <li>
+                    <span class="menu-category">EDITORIAL</span>
+                    <ul class="submenu">
+                        <li><a href="../other_shi/INTRO1.html">INTRO 1</a></li>
+                        <li><a href="../other_shi/INTRO2.html">INTRO 2</a></li>
+                    </ul>
+                </li>
+
+                <li>
+                    <span class="menu-category">INFO</span>
+                    <ul class="submenu">
+                        <li><a href="/other_shi/contacts.html">Contacts</a></li>
+                        <li><a href="/other_shi/SHANDRET.html">Delivery and Return</a></li>
+                        <li><a href="/other_shi/privacy.html">Privacy</a></li>
+                        <li><a href="/other_shi/TERMS.HTML">Terms and Conditions</a></li>
+                    </ul>
+                </li>
+
+                <li>
+                    <span class="menu-category">ACCOUNT</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

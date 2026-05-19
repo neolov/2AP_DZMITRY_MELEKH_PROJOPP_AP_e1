@@ -1,0 +1,173 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Times New Roman', Times, serif;
+    background-color: #f4f4f4;
+}
+
+.main-container {
+    width: 100%;
+    margin: auto;
+    overflow: hidden;
+    height: 100%;
+}
+
+.first-section {
+    position: relative;
+    width: 70%;
+    height: 827px;
+    float: left;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+
+    background: #f4f4f4;
+}
+
+.second-section {
+    display: flex;
+    position: relative;
+    width: 25%;
+    float: right;
+    padding: 20px;
+    background-color: #fff;
+    height: 827px;
+    align-items: center;
+    justify-content: left;
+}
+
+.nav-bar {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.main-text {
+    text-align: left;
+    color: #1c1c1c;
+    font-weight: bolder;
+    font-size: 2.8rem;
+}
+
+.menu-category {
+    font-family: 'Trebuchet MS', Arial, sans-serif;
+    text-decoration: none;
+    color: #333;
+    display: inline-block;
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+.menu-category:hover {
+    font-size: large;
+    font-weight: bold;
+}
+
+.submenu {
+    list-style: none;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    display: none;
+}
+
+.submenu a {
+    font-family: 'Trebuchet MS', Arial, sans-serif;
+    text-decoration: none;
+    color: #000;
+    display: block;
+    width: 200px;
+}
+
+.submenu a:hover {
+    font-weight: bold;
+}
+
+
+.account-wrapper {
+    width: 400px;
+
+    margin-top: 30px;
+    margin-right: 80px;
+
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.account-image {
+    width: 100%;
+    height: 430px;
+
+    object-fit: cover;
+
+    margin-bottom: 35px;
+
+    filter: grayscale(100%);
+}
+
+.account-tabs {
+    display: flex;
+    gap: 18px;
+
+    margin-bottom: 45px;
+
+    font-size: 14px;
+}
+
+.account-tabs span {
+    cursor: pointer;
+}
+
+.active-tab {
+    font-weight: bold;
+}
+
+#loginForm,
+#registerForm {
+    display: flex;
+    flex-direction: column;
+}
+
+#loginForm input,
+#registerForm input {
+    border: none;
+    border-bottom: 1px solid #000;
+
+    background: transparent;
+
+    padding: 15px 0;
+
+    margin-bottom: 25px;
+
+    outline: none;
+
+    font-size: 13px;
+}
+
+#loginBtn,
+#registerBtn,
+#logoutBtn {
+    border: none;
+    background: transparent;
+
+    cursor: pointer;
+
+    padding: 0;
+
+    margin-top: 15px;
+
+    text-align: left;
+
+    font-size: 14px;
+}
+
+.account-grid {
+    display: grid;
+
+    grid-template-columns: 140px 1fr;
+
+    row-gap: 10px;
+
+    margin-top: 30px;
+
+    font-size: 14px;
+}

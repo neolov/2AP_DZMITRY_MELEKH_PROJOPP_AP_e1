@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Cart</title>
+  <link rel="stylesheet" href="cart.css">
+  <script src="cart.js" defer></script>
+</head>
+<body>
+
+<div class="layout">
+
+
+    <div class="cart-left">
+        <div class="cart-items"></div>
+    </div>
+
+
+
+    <div class="cart-right">
+
+        <img src="../img/chb/dom4.jpg" class="cart-hero" alt="">
+
+        <div class="summary">
+            <h3>SUMMARY</h3>
+
+            <div class="summary-row">
+                <span>QUANTITY</span>
+                <span class="summary-qty">0</span>
+            </div>
+
+            <div class="summary-row">
+                <span>SUBTOTAL</span>
+                <span class="summary-subtotal">$0.00</span>
+            </div>
+
+            <div class="summary-row">
+                <span>SHIPPING</span>
+                <span class="summary-shipping">$25.00</span>
+            </div>
+
+            <div class="summary-row total">
+                <span>TOTAL</span>
+                <span class="summary-total">$0.00</span>
+            </div>
+
+            <p class="free-shipping-msg"></p>
+
+            <button class="checkout-btn">CHECKOUT</button>
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="right-menu">
+    <ul class="nav-bar">
+        <h1 class="main-text">n3wo1ow st0r3</h1>
+
+        <li>
+            <span class="menu-category">SHOP</span>
+            <ul class="submenu">
+                <li><a href="../sell/index.html?filter=all">All Products</a></li>
+                <li><a href="../sell/index.html?filter=new">New Arrivals</a></li>
+            </ul>
+        </li>
+
+        <li>
+            <span class="menu-category">PROJECTS</span>
+            <ul class="submenu">
+                <li><a href="../sell/index.html?filter=koe-no-katachi">koe no katachi</a></li>
+                <li><a href="../sell/index.html?filter=generation-of-vanity">generation of vanity</a></li>
+            </ul>
+        </li>
+
+        <li>
+            <span class="menu-category">EDITORIAL</span>
+            <ul class="submenu">
+                <li><a href="../other_shi/INTRO1.html">INTRO 1</a></li>
+                <li><a href="../other_shi/INTRO2.html">INTRO 2</a></li>
+            </ul>
+        </li>
+
+        <li>
+            <span class="menu-category">INFO</span>
+            <ul class="submenu">
+                <li><a href="../other_shi/contacts.html">Contacts</a></li>
+                <li><a href="../other_shi/SHANDRET.html">Delivery and Return</a></li>
+                <li><a href="../other_shi/privacy.html">Privacy</a></li>
+                <li><a href="../other_shi/TERMS.HTML">Terms and Conditions</a></li>
+            </ul>
+        </li>
+
+        <li>
+            <span class="menu-category">ACCOUNT</span>
+        </li>
+    </ul>
+</div>
+
+<script>
+document.querySelectorAll(".menu-category").forEach(categoryItem => {
+    categoryItem.addEventListener("click", () => {
+        const currentSubmenu = categoryItem.nextElementSibling;
+
+        document.querySelectorAll(".submenu").forEach(otherMenu => {
+            if (otherMenu !== currentSubmenu) {
+                otherMenu.style.display = "none";
+            }
+        });
+
+        if (currentSubmenu) {
+            const isOpen = currentSubmenu.style.display === "block";
+            currentSubmenu.style.display = isOpen ? "none" : "block";
+        }
+    });
+});
+</script>
+
+</body>
+</html>

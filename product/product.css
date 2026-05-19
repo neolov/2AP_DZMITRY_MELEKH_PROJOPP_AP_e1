@@ -1,0 +1,166 @@
+
+.product-page {
+  display: flex;
+  gap: 60px;
+  margin: 40px;
+  align-items: flex-start;
+}
+
+.product-gallery {
+  flex: 1;
+}
+
+.product-main-img {
+  position: relative;
+  left: 40%;
+  height: 30%;
+  width: 45%;
+  border-radius: 8px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.product-thumbs {
+  display: flex;
+  gap: 10px;
+  position: relative;
+  left: 45%;
+}
+
+.product-thumbs img {
+  width: 80px;
+  height: auto;
+  cursor: pointer;
+  border: 1px solid #ddd;
+  transition: transform 0.2s;
+}
+
+.product-thumbs img:hover {
+  transform: scale(1.05);
+}
+
+.product-details {
+  flex: 1;
+  max-width: 500px;
+  height: 40%;
+  position: relative;
+  left: -12%;
+}
+
+.product-title {
+  font-size: 2rem;
+  margin-bottom: 5px;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
+
+.product-price {
+  font-size: 1.2rem;
+  margin-bottom: 50px;
+  color: #333;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.selectors {
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+}
+
+.selectors label {
+
+
+  display: block;
+  margin: 10px 0 15px;
+  
+}
+
+.buy-btn {
+  background: black;
+  color: white;
+  padding: 15px 25px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+
+.back-link {
+  display: block;
+  margin: 20px 40px;
+  font-size: 14px;
+  text-decoration: none;
+  color: black;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
+.product-desc {
+  width: 350px;
+  margin-top: 20px;
+  line-height: 1.2;
+  font-size: 0.9rem;
+  font-family:Arial, Helvetica, sans-serif;
+  color: #646464;
+}
+
+.collection-name {
+  font-size: 1rem;
+  width: 350px;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  font-weight:100;
+  color: #1c1c1c;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+#size {
+  appearance: none; 
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: #f9f9f9 url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='12'%20height='12'%20viewBox='0%200%2024%2024'%3E%3Cpath%20fill='%23000'%20d='M7%2010l5%205%205-5z'/%3E%3C/svg%3E") no-repeat right 10px center;
+  background-size: 14px;
+  border: 1px solid #ccc;
+  padding: 5px;
+  font-size: 0.8rem;
+  border-radius: 6px;
+  text-align: left;       
+  direction: ltr;         
+  padding-left: 15px;     
+  padding-right: 90px; 
+  cursor: pointer;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+#size:hover {
+  border-color: #000;
+}
+
+#size:focus {
+  outline: none;
+  border-color: #000;
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+}
+
+.cart-link {
+  position: fixed;
+  top: 20px;
+  right: 40px;
+  text-decoration: none;
+  color: black;
+  font-weight: 500;
+  font-size: 16px;
+  z-index: 1000;
+}
+
+.cart-link:hover {
+  opacity: 0.6;
+}
+
+.cart-count {
+  font-weight: bold;
+}

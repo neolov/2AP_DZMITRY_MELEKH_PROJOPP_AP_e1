@@ -1,0 +1,165 @@
+body {
+  margin: 0;
+  background: #e6e6e6;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #000;
+}
+
+.layout {
+  display: flex;
+  justify-content: space-between;
+  padding: 80px;
+  padding-right: 550px; 
+}
+
+
+
+.cart-left {
+  flex: 1;
+  max-width: 600px;
+}
+
+.cart-item {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 80px;
+}
+
+.cart-item img {
+  width: 160px;
+}
+
+.cart-info h2 {
+  font-size: 16px;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.cart-info p {
+  font-size: 13px;
+  margin: 5px 0;
+}
+
+.quantity-control {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.quantity-control button {
+  background: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.remove-btn {
+  margin-top: 15px;
+  font-size: 12px;
+  cursor: pointer;
+  text-decoration: underline;
+  background: none;
+  border: none;
+}
+
+
+
+.cart-right {
+  width: 420px;
+}
+
+.cart-hero {
+  width: 100%;
+  height: 35%;
+  margin-bottom: 40px;
+}
+
+.summary h3 {
+  font-size: 14px;
+  margin-bottom: 25px;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  margin-bottom: 10px;
+}
+
+.summary-row.total {
+  font-weight: bold;
+  margin-top: 15px;
+}
+
+.free-shipping-msg {
+  font-size: 12px;
+  margin-top: 20px;
+}
+
+.checkout-btn {
+  margin-top: 50px;
+  width: 100%;
+  padding: 18px;
+  background: black;
+  color: white;
+  border: none;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+
+
+.right-menu {
+  position: fixed;
+  right: 80px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 400px;
+}
+
+.nav-bar {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.main-text {
+    text-align: left;
+    color: #1c1c1c;
+    font-weight: bolder;
+    font-size: 2.8rem;
+}
+
+.menu-category {
+    font-family: 'Trebuchet MS', Arial, sans-serif;
+    text-decoration: none;
+    color: #333;
+    display: inline-block;
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+.menu-category:hover {
+    font-size: large;
+    font-weight: bold;
+}
+
+.submenu {
+    list-style: none;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    display: none;
+}
+
+.submenu a {
+    font-family: 'Trebuchet MS', Arial, sans-serif;
+    text-decoration: none;
+    color: #000;
+    display: block;
+    width: 200px;
+}
+
+.submenu a:hover {
+    font-weight: bold;
+}
