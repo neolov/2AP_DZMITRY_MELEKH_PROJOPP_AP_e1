@@ -26,7 +26,7 @@ node server.js
 
 6. Otwórz przeglądarkę i przejdź do:
 
-http://localhost:3000
+http://localhost:3000/account
 
 ---
 
