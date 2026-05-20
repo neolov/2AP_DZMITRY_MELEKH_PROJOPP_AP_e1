@@ -74,17 +74,29 @@ Wejdź na repozytorium projektu:
 ## 4. Struktura projektu
 
 ├── account/
+
 │   ├── account-page.js
+
 │   ├── account.css
+
 │   ├── account.html
+
 │   ├── accounts.js
+
 │   └── index.html
+
 │
+
 ├── cart/
+
 │   ├── cart.css
+
 │   ├── cart.html
+
 │   └── cart.js
+
 │
+
 ├── data/
 │   └── users.json
 │
