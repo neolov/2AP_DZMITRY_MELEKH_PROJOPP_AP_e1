@@ -72,7 +72,7 @@ Wejdź na repozytorium projektu:
 ---
 
 ## 4. Struktura projektu
-
+```txt
 ├├── account/ — panel konta użytkownika
 │   ├── account-page.js — logika strony konta użytkownika
 │   ├── account.css — style panelu konta
@@ -125,7 +125,7 @@ Wejdź na repozytorium projektu:
 ├── package-lock.json — zapis wersji zależności npm
 ├── README.md — dokumentacja projektu
 └── server.js — główny plik serwera aplikacji
-
+```
 ---
 
 ## 5. Użycie
