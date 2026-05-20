@@ -26,6 +26,8 @@ document.querySelectorAll(".menu-category").forEach(categoryItem => {
     });
 });
 
+
+
 const loginTab =
     document.getElementById("loginTab");
 
@@ -38,116 +40,149 @@ const loginForm =
 const registerForm =
     document.getElementById("registerForm");
 
-loginTab.addEventListener("click", () => {
 
-    loginForm.style.display = "flex";
 
-    registerForm.style.display = "none";
+if (loginTab && registerTab) {
 
-    loginTab.classList.add("active-tab");
+    loginTab.addEventListener("click", () => {
 
-    registerTab.classList.remove("active-tab");
-});
+        loginForm.style.display = "flex";
 
-registerTab.addEventListener("click", () => {
+        registerForm.style.display = "none";
 
-    loginForm.style.display = "none";
+        loginTab.classList.add("active-tab");
 
-    registerForm.style.display = "flex";
-
-    registerTab.classList.add("active-tab");
-
-    loginTab.classList.remove("active-tab");
-});
-
-document
-.getElementById("registerBtn")
-.addEventListener("click", async () => {
-
-    const name =
-        document.getElementById("registerName").value;
-
-    const email =
-        document.getElementById("registerEmail").value;
-
-    const password =
-        document.getElementById("registerPassword").value;
-
-    if (password.length < 8) {
-
-        alert(
-            "Password must be at least 8 characters"
-        );
-
-        return;
-    }
-
-    const response = await fetch("/register", {
-
-        method: "POST",
-
-        headers: {
-            "Content-Type": "application/json"
-        },
-
-        body: JSON.stringify({
-            name,
-            email,
-            password
-        })
+        registerTab.classList.remove("active-tab");
     });
 
-    const data = await response.json();
+    registerTab.addEventListener("click", () => {
 
-    if (!response.ok) {
+        loginForm.style.display = "none";
 
-        alert(data.message);
+        registerForm.style.display = "flex";
 
-        return;
-    }
+        registerTab.classList.add("active-tab");
 
-    window.location.href =
-        "/account/account.html";
-});
-
-document
-.getElementById("loginBtn")
-.addEventListener("click", async () => {
-
-    const email =
-        document.getElementById("loginEmail").value;
-
-    const password =
-        document.getElementById("loginPassword").value;
-
-    const response = await fetch("/login", {
-
-        method: "POST",
-
-        headers: {
-            "Content-Type": "application/json"
-        },
-
-        body: JSON.stringify({
-            email,
-            password
-        })
+        loginTab.classList.remove("active-tab");
     });
+}
 
-    const user = await response.json();
 
-    if (!response.ok) {
 
-        alert(user.message);
+const registerBtn =
+    document.getElementById("registerBtn");
 
-        return;
-    }
+if (registerBtn) {
 
-    localStorage.setItem(
-        "currentUser",
-        JSON.stringify(user)
+    registerBtn.addEventListener(
+        "click",
+        async () => {
+
+            const name =
+                document.getElementById("registerName").value;
+
+            const email =
+                document.getElementById("registerEmail").value;
+
+            const password =
+                document.getElementById("registerPassword").value;
+
+            if (password.length < 8) {
+
+                alert(
+                    "Password must be at least 8 characters"
+                );
+
+                return;
+            }
+
+            const response = await fetch("/register", {
+
+                method: "POST",
+
+                headers: {
+                    "Content-Type": "application/json"
+                },
+
+                body: JSON.stringify({
+                    name,
+                    email,
+                    password
+                })
+            });
+
+            const data =
+                await response.json();
+
+            if (!response.ok) {
+
+                alert(data.message);
+
+                return;
+            }
+
+            
+            localStorage.setItem(
+                "currentUser",
+                JSON.stringify(data.user)
+            );
+
+            
+            window.location.href =
+                "/account/account.html";
+        }
     );
+}
 
-    window.location.href =
-        "/account/account.html";
-});
+
+
+const loginBtn =
+    document.getElementById("loginBtn");
+
+if (loginBtn) {
+
+    loginBtn.addEventListener(
+        "click",
+        async () => {
+
+            const email =
+                document.getElementById("loginEmail").value;
+
+            const password =
+                document.getElementById("loginPassword").value;
+
+            const response = await fetch("/login", {
+
+                method: "POST",
+
+                headers: {
+                    "Content-Type":
+                        "application/json"
+                },
+
+                body: JSON.stringify({
+                    email,
+                    password
+                })
+            });
+
+            const user =
+                await response.json();
+
+            if (!response.ok) {
+
+                alert(user.message);
+
+                return;
+            }
+
+            localStorage.setItem(
+                "currentUser",
+                JSON.stringify(user)
+            );
+
+            window.location.href =
+                "/account/account.html";
+        }
+    );
+}

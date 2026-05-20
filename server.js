@@ -6,8 +6,6 @@ const app = express();
 
 app.use(express.json());
 
-app.use(express.static(__dirname));
-
 const USERS_FILE = path.join(
     __dirname,
     "data",
@@ -17,7 +15,11 @@ const USERS_FILE = path.join(
 function getUsers() {
 
     if (!fs.existsSync(USERS_FILE)) {
-        fs.writeFileSync(USERS_FILE, "[]");
+
+        fs.writeFileSync(
+            USERS_FILE,
+            "[]"
+        );
     }
 
     const data = fs.readFileSync(
@@ -35,6 +37,17 @@ function saveUsers(users) {
         JSON.stringify(users, null, 2)
     );
 }
+
+
+
+app.get("/users", (req, res) => {
+
+    const users = getUsers();
+
+    res.json(users);
+});
+
+
 
 app.post("/register", (req, res) => {
 
@@ -80,7 +93,9 @@ app.post("/register", (req, res) => {
 
         email,
 
-        password
+        password,
+
+        orders: []
     };
 
     users.push(newUser);
@@ -88,9 +103,14 @@ app.post("/register", (req, res) => {
     saveUsers(users);
 
     res.json({
-        success: true
+
+        success: true,
+
+        user: newUser
     });
 });
+
+
 
 app.post("/login", (req, res) => {
 
@@ -116,6 +136,87 @@ app.post("/login", (req, res) => {
 
     res.json(user);
 });
+
+
+
+app.post("/checkout", (req, res) => {
+
+    const {
+        userId,
+        cart
+    } = req.body;
+
+    if (!userId || !cart || cart.length === 0) {
+
+        return res.status(400).json({
+            message: "Cart is empty"
+        });
+    }
+
+    const users = getUsers();
+
+    const user = users.find(
+        user => user.id === userId
+    );
+
+    if (!user) {
+
+        return res.status(404).json({
+            message: "User not found"
+        });
+    }
+
+    const subtotal = cart.reduce((sum, item) => {
+
+        const price = parseFloat(
+            item.price.replace(/[^\d.]/g, "")
+        );
+
+        return sum + price;
+
+    }, 0);
+
+    const shipping =
+        subtotal >= 250 ? 0 : 25;
+
+    const total = subtotal + shipping;
+
+    const newOrder = {
+
+        id: Date.now(),
+
+        items: cart,
+
+        subtotal,
+
+        shipping,
+
+        total,
+
+        createdAt: new Date().toISOString()
+    };
+
+    if (!user.orders) {
+        user.orders = [];
+    }
+
+    user.orders.push(newOrder);
+
+    saveUsers(users);
+
+    res.json({
+
+        success: true,
+
+        order: newOrder
+    });
+});
+
+
+
+app.use(express.static(__dirname));
+
+
 
 app.listen(3000, () => {
 

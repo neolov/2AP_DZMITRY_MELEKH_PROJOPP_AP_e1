@@ -58,3 +58,127 @@ document
     window.location.href =
         "/account/index.html";
 });
+
+const ordersBtn =
+    document.getElementById("ordersBtn");
+
+const ordersContainer =
+    document.getElementById("ordersContainer");
+
+ordersBtn.addEventListener("click", () => {
+
+    renderOrders();
+});
+
+async function renderOrders() {
+
+    ordersContainer.innerHTML = "";
+
+    const response = await fetch("/users");
+
+    const users = await response.json();
+
+    const user = users.find(
+        u => u.id === currentUser.id
+    );
+
+    if (!user.orders || user.orders.length === 0) {
+
+        ordersContainer.innerHTML =
+            "<p>No orders yet.</p>";
+
+        return;
+    }
+
+    const reversedOrders =
+        [...user.orders].reverse();
+
+    reversedOrders.forEach((order, index) => {
+
+        const realOrderNumber =
+            user.orders.length - index;
+
+        const orderNumber =
+            `7770(${String(
+                realOrderNumber
+            ).padStart(3, "0")})`;
+
+        const orderCard =
+            document.createElement("div");
+
+        orderCard.classList.add("order-card");
+
+        const orderDate =
+            new Date(order.createdAt)
+            .toLocaleDateString();
+
+        orderCard.innerHTML = `
+
+            <div class="order-header">
+
+                <div class="order-number">
+                    ORDER ${orderNumber}
+                </div>
+
+                <div class="order-date">
+                    ${orderDate}
+                </div>
+
+                <div class="order-total">
+                    TOTAL $${order.total}
+                </div>
+
+            </div>
+        `;
+
+        
+        orderCard.addEventListener("click", () => {
+
+            renderSelectedOrder(order);
+        });
+
+        ordersContainer.appendChild(orderCard);
+    });
+
+    
+    renderSelectedOrder(
+        reversedOrders[0]
+    );
+}
+
+const selectedOrderItems =
+    document.getElementById(
+        "selectedOrderItems"
+    );
+
+    function renderSelectedOrder(order) {
+
+    selectedOrderItems.innerHTML = "";
+
+    order.items.forEach(item => {
+
+        const div =
+            document.createElement("div");
+
+        div.classList.add(
+            "selected-order-item"
+        );
+
+        div.innerHTML = `
+
+            <img src="${item.image}">
+
+            <div class="selected-order-info">
+
+                <h2>${item.name}</h2>
+
+                <p>SIZE ${item.size}</p>
+
+                <p>PRICE ${item.price}</p>
+
+            </div>
+        `;
+
+        selectedOrderItems.appendChild(div);
+    });
+}

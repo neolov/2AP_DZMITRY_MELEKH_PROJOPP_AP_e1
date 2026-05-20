@@ -3,6 +3,107 @@
     "id": 1779204663978,
     "name": "neolovboss",
     "email": "dneolov@gmail.com",
-    "password": "Rembal123"
+    "password": "Rembal123",
+    "orders": [
+      {
+        "id": 1779302449274,
+        "items": [
+          {
+            "id": 2,
+            "name": "Koe no katachi T-shirt",
+            "price": "$350.00",
+            "image": "../img/koe no katachi/T-shirt koe no katachi.jpg",
+            "size": "S"
+          }
+        ],
+        "subtotal": 350,
+        "shipping": 0,
+        "total": 350,
+        "createdAt": "2026-05-20T18:40:49.274Z"
+      },
+      {
+        "id": 1779302683711,
+        "items": [
+          {
+            "id": 2,
+            "name": "Koe no katachi T-shirt",
+            "price": "$350.00",
+            "image": "../img/koe no katachi/T-shirt koe no katachi.jpg",
+            "size": "S"
+          }
+        ],
+        "subtotal": 350,
+        "shipping": 0,
+        "total": 350,
+        "createdAt": "2026-05-20T18:44:43.711Z"
+      },
+      {
+        "id": 1779302702899,
+        "items": [
+          {
+            "id": 3,
+            "name": "Koe no katachi longsleeve",
+            "price": "$550.00",
+            "image": "../img/koe no katachi/koe no katachi long.png",
+            "size": "S"
+          },
+          {
+            "id": 6,
+            "name": "I remember when I first noticed that you liked me too.",
+            "price": "$666.00",
+            "image": "../img/i remember/long face.jpg",
+            "size": "S"
+          }
+        ],
+        "subtotal": 1216,
+        "shipping": 0,
+        "total": 1216,
+        "createdAt": "2026-05-20T18:45:02.899Z"
+      },
+      {
+        "id": 1779303508934,
+        "items": [
+          {
+            "id": 3,
+            "name": "Koe no katachi longsleeve",
+            "price": "$550.00",
+            "image": "../img/koe no katachi/koe no katachi long.png",
+            "size": "S"
+          },
+          {
+            "id": 2,
+            "name": "Koe no katachi T-shirt",
+            "price": "$350.00",
+            "image": "../img/koe no katachi/T-shirt koe no katachi.jpg",
+            "size": "S"
+          },
+          {
+            "id": 6,
+            "name": "I remember when I first noticed that you liked me too.",
+            "price": "$666.00",
+            "image": "../img/i remember/long face.jpg",
+            "size": "S"
+          },
+          {
+            "id": 6,
+            "name": "I remember when I first noticed that you liked me too.",
+            "price": "$666.00",
+            "image": "../img/i remember/long face.jpg",
+            "size": "L"
+          }
+        ],
+        "subtotal": 2232,
+        "shipping": 0,
+        "total": 2232,
+        "createdAt": "2026-05-20T18:58:28.934Z"
+      }
+    ]
+  },
+  {
+    "id": 1779213422665,
+    "name": "chuvanya",
+    "email": "chuvan@gmail.com",
+    "password": "loh12345",
+    "orders": []
   }
 ]

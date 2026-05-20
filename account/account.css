@@ -1,101 +1,183 @@
 body {
+
     margin: 0;
     padding: 0;
+
     font-family: 'Times New Roman', Times, serif;
-    background-color: #f4f4f4;
+
+    background-color: #e9e9e9;
+
+    overflow: hidden;
 }
+
+
 
 .main-container {
+
+    display: flex;
+
     width: 100%;
-    margin: auto;
-    overflow: hidden;
-    height: 100%;
+
+    height: 100vh;
 }
+
+
 
 .first-section {
-    position: relative;
-    width: 70%;
-    height: 827px;
-    float: left;
+
+    flex: 1;
 
     display: flex;
-    justify-content: flex-end;
+
+    justify-content: space-between;
+
     align-items: flex-start;
 
-    background: #f4f4f4;
+    gap: 80px;
+
+    overflow-y: auto;
+
+    background: #e9e9e9;
+
+    padding: 60px 80px;
+
+    box-sizing: border-box;
 }
+
+
 
 .second-section {
+
+    width: 320px;
+
+    background: #f8f8f8;
+
+    border-left: 1px solid #bcbcbc;
+
     display: flex;
-    position: relative;
-    width: 25%;
-    float: right;
-    padding: 20px;
-    background-color: #fff;
-    height: 827px;
-    align-items: center;
-    justify-content: left;
+
+    justify-content: flex-start;
+
+    padding: 30px;
+
+    box-sizing: border-box;
+
+    overflow: hidden;
 }
+
+
 
 .nav-bar {
+
     list-style: none;
+
     padding: 0;
+
     margin: 0;
+
+    width: 160px;
 }
+
+
 
 .main-text {
+
     text-align: left;
+
     color: #1c1c1c;
+
     font-weight: bolder;
+
     font-size: 2.8rem;
+
+    margin-bottom: 40px;
 }
 
+
+
 .menu-category {
+
     font-family: 'Trebuchet MS', Arial, sans-serif;
+
     text-decoration: none;
+
     color: #333;
+
     display: inline-block;
+
     cursor: pointer;
+
     margin-top: 5px;
 }
 
+
+
 .menu-category:hover {
+
     font-size: large;
+
     font-weight: bold;
 }
 
+
+
 .submenu {
+
     list-style: none;
+
     padding-top: 20px;
+
     padding-bottom: 20px;
+
     display: none;
 }
 
+
+
 .submenu a {
+
     font-family: 'Trebuchet MS', Arial, sans-serif;
+
     text-decoration: none;
+
     color: #000;
+
     display: block;
+
     width: 200px;
 }
 
+
+
 .submenu a:hover {
+
     font-weight: bold;
 }
 
 
-.account-wrapper {
-    width: 400px;
 
-    margin-top: 30px;
-    margin-right: 80px;
+.account-wrapper {
+
+    width: 280px;
+
+    display: flex;
+
+    flex-direction: column;
 
     font-family: Arial, Helvetica, sans-serif;
+
+    position: sticky;
+
+    top: 60px;
 }
 
+
+
 .account-image {
+
     width: 100%;
-    height: 430px;
+
+    height: 280px;
 
     object-fit: cover;
 
@@ -104,32 +186,275 @@ body {
     filter: grayscale(100%);
 }
 
-.account-tabs {
-    display: flex;
-    gap: 18px;
 
-    margin-bottom: 45px;
+
+.account-title {
+
+    font-size: 18px;
+
+    margin-bottom: 30px;
+}
+
+
+
+.account-grid {
+
+    display: grid;
+
+    grid-template-columns: 110px 1fr;
+
+    row-gap: 14px;
+
+    font-size: 14px;
+
+    margin-bottom: 30px;
+}
+
+
+
+#logoutBtn {
+
+    border: none;
+
+    background: transparent;
+
+    cursor: pointer;
+
+    padding: 0;
+
+    margin-top: 25px;
+
+    text-align: left;
 
     font-size: 14px;
 }
 
-.account-tabs span {
-    cursor: pointer;
-}
 
-.active-tab {
+
+#ordersBtn {
+
+    border: none;
+
+    background: transparent;
+
+    cursor: pointer;
+
+    padding: 0;
+
+    margin-top: 15px;
+
+    margin-bottom: 20px;
+
+    text-align: left;
+
+    font-size: 14px;
+
     font-weight: bold;
 }
 
+
+
+#ordersContainer {
+
+    overflow-y: auto;
+
+    max-height: 350px;
+
+    padding-right: 10px;
+}
+
+
+
+#ordersContainer::-webkit-scrollbar {
+
+    width: 4px;
+}
+
+
+
+#ordersContainer::-webkit-scrollbar-thumb {
+
+    background: #000;
+}
+
+
+
+.order-card {
+
+    border-top: 1px solid #000;
+
+    padding: 22px 0;
+
+    cursor: pointer;
+}
+
+
+
+.order-card:hover {
+
+    opacity: 0.7;
+}
+
+
+
+.order-number {
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+}
+
+
+
+.order-date {
+
+    font-size: 12px;
+
+    margin-top: 8px;
+
+    opacity: 0.7;
+}
+
+
+
+.order-total {
+
+    margin-top: 8px;
+
+    font-size: 13px;
+}
+
+
+
+.orders-view {
+
+    flex: 1;
+
+    max-width: 700px;
+}
+
+
+
+#selectedOrderItems {
+
+    width: 100%;
+}
+
+
+
+.selected-order-item {
+
+    display: flex;
+
+    gap: 35px;
+
+    margin-bottom: 70px;
+}
+
+
+
+.selected-order-item img {
+
+    width: 170px;
+
+    height: 220px;
+
+    object-fit: cover;
+
+    background: white;
+}
+
+
+
+.selected-order-info {
+
+    padding-top: 10px;
+}
+
+
+
+.selected-order-info h2 {
+
+    font-size: 18px;
+
+    margin-bottom: 18px;
+}
+
+
+
+.selected-order-info p {
+
+    font-size: 14px;
+
+    margin: 6px 0;
+}
+
+.first-section:has(.account-tabs) {
+
+    justify-content: flex-end;
+
+    align-items: center;
+}
+
+
+
+.first-section:has(.account-tabs) .account-wrapper {
+
+    margin-right: 120px;
+
+    width: 340px;
+
+    position: static;
+}
+
+
+
+.account-tabs {
+
+    display: flex;
+
+    gap: 20px;
+
+    margin-bottom: 45px;
+
+    font-size: 14px;
+
+    letter-spacing: 1px;
+}
+
+
+
+.account-tabs span {
+
+    cursor: pointer;
+}
+
+
+
+.active-tab {
+
+    font-weight: bold;
+}
+
+
+
 #loginForm,
 #registerForm {
+
     display: flex;
+
     flex-direction: column;
 }
 
+
+
 #loginForm input,
 #registerForm input {
+
     border: none;
+
     border-bottom: 1px solid #000;
 
     background: transparent;
@@ -141,12 +466,17 @@ body {
     outline: none;
 
     font-size: 13px;
+
+    font-family: Arial, Helvetica, sans-serif;
 }
 
+
+
 #loginBtn,
-#registerBtn,
-#logoutBtn {
+#registerBtn {
+
     border: none;
+
     background: transparent;
 
     cursor: pointer;
@@ -158,16 +488,6 @@ body {
     text-align: left;
 
     font-size: 14px;
-}
 
-.account-grid {
-    display: grid;
-
-    grid-template-columns: 140px 1fr;
-
-    row-gap: 10px;
-
-    margin-top: 30px;
-
-    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
 }

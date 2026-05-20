@@ -82,3 +82,84 @@ function attachRemoveEvents() {
 }
 
 renderCart();
+
+const checkoutBtn =
+    document.querySelector(".checkout-btn");
+
+checkoutBtn.addEventListener(
+    "click",
+    async () => {
+
+        const currentUser = JSON.parse(
+            localStorage.getItem("currentUser")
+        );
+
+        
+        if (!currentUser) {
+
+            alert("Please login");
+
+            window.location.href =
+                "/account/account.html";
+
+            return;
+        }
+
+        
+        if (cart.length === 0) {
+
+            alert("Cart is empty");
+
+            return;
+        }
+
+        try {
+
+            const response = await fetch(
+                "/checkout",
+                {
+                    method: "POST",
+
+                    headers: {
+                        "Content-Type":
+                            "application/json"
+                    },
+
+                    body: JSON.stringify({
+
+                        userId: currentUser.id,
+
+                        cart: cart
+                    })
+                }
+            );
+
+            const data =
+                await response.json();
+
+            if (!response.ok) {
+
+                alert(data.message);
+
+                return;
+            }
+
+            
+            alert("Order successful");
+
+            
+            localStorage.removeItem("cart");
+
+            cart = [];
+
+            
+            renderCart();
+
+        } catch (err) {
+
+            console.error(err);
+
+            alert("Server error");
+        }
+    }
+);
