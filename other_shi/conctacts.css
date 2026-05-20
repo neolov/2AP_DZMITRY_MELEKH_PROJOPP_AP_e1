@@ -201,3 +201,18 @@ html, body {
 img {
     display: block;
 }
+
+.options a {
+    font-family: 'Trebuchet MS', Arial, sans-serif;
+    text-decoration: none;
+    color: #333;
+    display: inline-block;
+    cursor: pointer;
+    margin-top: 5px;
+    transition: 0.2s;
+}
+
+.options a:hover {
+    font-size: large;
+    font-weight: bold;
+}
