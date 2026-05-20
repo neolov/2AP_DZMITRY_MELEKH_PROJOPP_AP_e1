@@ -73,72 +73,58 @@ Wejdź na repozytorium projektu:
 
 ## 4. Struktura projektu
 
-├── account/
-
-│   ├── account-page.js
-
-│   ├── account.css
-
-│   ├── account.html
-
-│   ├── accounts.js
-
-│   └── index.html
-
+├├── account/ — panel konta użytkownika
+│   ├── account-page.js — logika strony konta użytkownika
+│   ├── account.css — style panelu konta
+│   ├── account.html — główna strona konta użytkownika
+│   ├── accounts.js — obsługa danych kont i autoryzacji
+│   └── index.html — strona startowa sekcji account
 │
-
-├── cart/
-
-│   ├── cart.css
-
-│   ├── cart.html
-
-│   └── cart.js
-
+├── cart/ — koszyk zakupowy
+│   ├── cart.css — style koszyka
+│   ├── cart.html — struktura strony koszyka
+│   └── cart.js — logika dodawania/usuwania produktów
 │
-
-├── data/
-│   └── users.json
+├── data/ — dane aplikacji
+│   └── users.json — baza użytkowników w formacie JSON
 │
-├── img/
+├── img/ — folder z obrazami i grafikami projektu
 │
-├── main-page/
-│   ├── index.html
-│   ├── index.js
-│   └── style.css
+├── main-page/ — strona główna aplikacji
+│   ├── index.html — główna struktura strony startowej
+│   ├── index.js — skrypty i interakcje strony głównej
+│   └── style.css — style strony głównej
 │
-├── other-shi/
-│   ├── contacts.css
-│   ├── contacts.html
-│   ├── INTRO.css
-│   ├── INTRO1.html
-│   ├── INTRO2.html
-│   ├── privacy.css
-│   ├── privacy.html
-│   ├── script.js
-│   ├── SHANDRET.css
-│   ├── SHANDRET.html
-│   ├── terms.css
-│   └── TERMS.HTML
+├── other-shi/ — dodatkowe strony informacyjne i pomocnicze
+│   ├── contacts.css — style strony kontaktowej
+│   ├── contacts.html — strona kontaktowa
+│   ├── INTRO.css — style strony intro
+│   ├── INTRO1.html — pierwsza strona wprowadzająca
+│   ├── INTRO2.html — druga strona wprowadzająca
+│   ├── privacy.css — style polityki prywatności
+│   ├── privacy.html — strona polityki prywatności
+│   ├── script.js — wspólne skrypty dla dodatkowych stron
+│   ├── SHANDRET.css — style strony SHANDRET
+│   ├── SHANDRET.html — dodatkowa strona informacyjna
+│   ├── terms.css — style regulaminu
+│   └── TERMS.HTML — strona regulaminu serwisu
 │
-├── product/
-│   ├── product.css
-│   ├── product.html
-│   └── product.js
+├── product/ — sekcja produktu
+│   ├── product.css — style strony produktu
+│   ├── product.html — struktura strony produktu
+│   └── product.js — logika obsługi produktów
 │
-├── sell/
-│   ├── index.html
-│   ├── script.js
-│   └── style.css
+├── sell/ — panel sprzedaży produktów
+│   ├── index.html — główna strona sprzedaży
+│   ├── script.js — logika dodawania i zarządzania ofertami
+│   └── style.css — style panelu sprzedaży
 │
-├── banner.jpg
-├── banner2.jpg
-├── package.json
-├── package-lock.json
-├── README.md
-└── server.js
-
-MAIN-PAGE - STRONA GLOWNA
+├── banner.jpg — główny banner strony
+├── banner2.jpg — dodatkowy banner/promocja
+├── package.json — konfiguracja projektu Node.js i zależności
+├── package-lock.json — zapis wersji zależności npm
+├── README.md — dokumentacja projektu
+└── server.js — główny plik serwera aplikacji
 
 ---
 
