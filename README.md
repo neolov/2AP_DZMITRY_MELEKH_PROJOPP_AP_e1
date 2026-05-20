@@ -34,7 +34,7 @@ http://localhost:3000/account
 
 Wejdź na repozytorium projektu:
 
-https://github.com/nazwa_konta/nazwa_projektu
+[(https://github.com/neolov/2AP_DZMITRY_MELEKH_PROJOPP_AP_e1/tree/main)](https://github.com/neolov/2AP_DZMITRY_MELEKH_PROJOPP_AP_e1/tree/main)
 
 ---
 
