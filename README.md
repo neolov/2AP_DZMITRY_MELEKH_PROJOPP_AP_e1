@@ -26,7 +26,7 @@ node server.js
 
 6. Otwórz przeglądarkę i przejdź do:
 
-http://localhost:3000/account
+[http://localhost:3000/account](http://localhost:3000/main-page/)
 
 ---
 
@@ -125,6 +125,8 @@ Wejdź na repozytorium projektu:
 ├── package-lock.json
 ├── README.md
 └── server.js
+
+MAIN-PAGE - STRONA GLOWNA
 
 ---
 
